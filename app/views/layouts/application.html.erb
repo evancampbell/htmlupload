@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= title %></title>
+    <%= render 'layouts/stylesheets' %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "jquery-1.4.2.min.js" %>
+    <script type='text/javascript'>
+      $(function() {
+        $('.error').hide();
+        $('#upload_htmlfield').change(function() {
+          $('#submit_error').fadeOut();
+          $('#upload_rarfield').val('');
+          var ext=$(this).val().split('.').pop().toLowerCase();
+          var allow=new Array('html','htm');
+          if (jQuery.inArray(ext,allow)==-1) {
+            $('#html_error').fadeIn();
+            $(this).val('');
+          } else {
+            $('#html_error').fadeOut();
+          }
+        });
+        $('#upload_rarfield').change(function() {
+          $('#submit_error').fadeOut();
+          $('#upload_htmlfield').val('');
+          $('#upload_cssfield').val('');
+          var ext=$(this).val().split('.').pop().toLowerCase();
+          var allow=new Array('rar','zip','gz','bz2');
+          if (jQuery.inArray(ext,allow)==-1) {
+            $('#rar_error').fadeIn();
+            $(this).val('');
+          } else {
+            ('#rar_error').fadeOut();
+          }
+        });
+        $('#upload_cssfield').change(function() {
+          $('#upload_rarfield').val('');
+          var ext=$(this).val().split('.').pop().toLowerCase();
+          var allow=new Array('css');
+          if (jQuery.inArray(ext,allow)==-1) {
+            $('#css_error').fadeIn();
+            $(this).val('');
+          } else {
+            $('#css_error').fadeOut();
+          }
+        });
+        $('#submit_button').click(function(e) {
+          if ($('#upload_htmlfield').val()=='' || $('#upload_rarfield').val=='') {
+            e.preventDefault();
+            $('#submit_error').fadeIn();
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id='wrapper'>
+      <%= render 'layouts/header' %>
+      <div id="content" >
+    <%= yield %>
+    </div>
+    <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>
+

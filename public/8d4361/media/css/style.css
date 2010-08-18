@@ -1,0 +1,8 @@
+h2,p {
+	font-family:Georgia;
+}
+
+body {
+	background-image:url('../img/bg.png');
+	background-repeat:both;
+}

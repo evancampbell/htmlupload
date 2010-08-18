@@ -1,0 +1,27 @@
+
+<form action='/upload' method='post' enctype='multipart/form-data'>
+<table id='form' align='center' cellspacing=10>
+<tr>
+<td align='center' style='background-color:#fff9eb;'>
+<h3>Simple</h3>
+<br/>
+<%= token_tag %>
+<span style='text-align:left;display:block;font-size:16px;'>html</span>
+<span class='error' id='html_error'>Invalid file type!</span>
+<%= file_field "upload", "htmlfield" %>
+<span style='text-align:left;display:block;font-size:16px;'>css</span>
+<span class='error' id='css_error'>Invalid file type!</span>
+<%= file_field "upload", "cssfield" %>
+</td>
+<td align='center' style='background-color:#ebf1ff;'><h3>Advanced</h3><br/><br/>
+<span class='error' id='rar_error'>Invalid file type!</span>
+<%= file_field "upload", "rarfield" %><br/>
+<span class='filetypes'>Accetped filetypes: rar, zip, tar.gz, tar.bz2</span>
+</td>
+</tr>
+</table>
+<br/>
+<span class='error' id='submit_error'>You didn't choose a file!</span>
+<br/>
+<input type='submit' id='submit_button' value='Upload' style='font-size:32px;' />
+</form>

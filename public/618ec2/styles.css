@@ -1,0 +1,73 @@
+html,body,h1,h2,h3,h4,p,a,ul,blockquote {
+	margin: 0;
+	padding: 0;
+	font-family: Palatino,"Palatino Linotype",Georgia,"Times New Roman",serif;
+}
+
+body {
+	background-color: white;
+	background-image:url('img/bodygrad.png');
+	background-repeat:repeat-x;
+}
+
+a {
+	color:#31619F;
+}
+
+@font-face {
+	font-family:"Candara";
+	src: url('CANDARA.TTF') format('truetype');
+}
+
+@font-face {
+	font-family:"Candara Bold";
+	src: url('candarab.ttf') format('truetype');
+}
+
+.deathwise {
+	padding:3px;
+	background-color:#f6fbff;
+	background-image:url('img/headergrad.png');
+	background-repeat:repeat-x;
+	position:relative;
+	height:74px;
+}
+
+h1 {
+	font-size:60px;
+	display:inline-block;
+	font-family: "Candara",Helvetica,sans-serif;
+	font-weight:normal;
+	position:absolute;
+	top:15px;
+	bottom:0;
+	left:15px;
+}
+
+hr {
+	height:1px;
+	border:0;
+	border-bottom:1px solid #BBB;
+	width:80%;
+	margin-top:0;
+	margin-bottom:0;
+	padding-top:0;
+	padding-bottom:0;
+	}
+	
+h2 {
+	font-size:24px;
+	font-weight:normal;
+	font-family:Palatino,"Palatino Linotype","Candara",Helvetica,sans-serif;
+	display:inline;
+	color:#555;
+}
+
+blockquote {
+	font-size:17px;
+	padding:30px;
+	padding-top:17px;
+	display:block;
+	color:#333;
+	font-family:Palatino,"Palatino Linotype",Garamond,"Times New Roman",serif;
+}
